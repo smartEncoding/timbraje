@@ -17,6 +17,11 @@ class Tipos_libro extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('Tipos_libro_model');
+        if(!is_logged_in())
+        {
+            $this->session->sess_destroy();
+            redirect("login");   
+        }
         $salida=generar_permisos($this->modulo,100,' Agregar nuevo Libro');
         //var_dump($salida);
         $this->permisos=$salida['permisos'];

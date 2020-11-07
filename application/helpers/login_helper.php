@@ -3,7 +3,7 @@ function is_logged_in() {
     // Get current CodeIgniter instance
     $CI =& get_instance();
     // We need to use $CI->session instead of $session
-    $user = $CI->session->userdata('is_logued_in');
+    $user = $CI->session->userdata('is_loged_in');
     if (!isset($user)) { return false; } else { return true; }
 }
 function obtener_permisos_x_modulo($id_modulo,$id_usuario)

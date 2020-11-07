@@ -46,14 +46,18 @@ class Login extends CI_Controller {
     
         public function verifica()
     {
+        
         $correo = $this->input->post('email');
         $password = $this->input->post('password');
+        //echo hash('sha256', $this->input->post('password'));
+        //exit;
         if($this->login_model->login($correo, $password))
         {
             redirect('Dashboard');
         }
         else
         {
+            
             $this->form_validation->set_message('verifica','Contraseña incorrecta');
             redirect(base_url().'login');
         }

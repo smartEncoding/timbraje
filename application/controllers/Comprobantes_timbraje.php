@@ -13,6 +13,11 @@ class Comprobantes_timbraje extends CI_Controller{
         $this->load->model('Comprobantes_timbraje_model');
         $this->load->model('Empresa_model');
         $this->load->model('Usuario_model');
+        if(!is_logged_in())
+        {
+            $this->session->sess_destroy();
+            redirect("login");   
+        }
         
         $this->codigo_usuario=1;
     } 

@@ -10,7 +10,8 @@ class Login_model extends CI_Model {
 
 	public function mipassword_verify($pass,$row_pass)
 	{
-		$password = hash('sha256',$pass);
+                $password = hash('sha256',$pass);
+                
 		if ($row_pass==$password)
 		{
 			return true;
@@ -25,7 +26,7 @@ class Login_model extends CI_Model {
         {
                 /*https://colaboratorio.net/atareao/developer/2018/registro-y-control-de-acceso-con-codeigniter/ */
 
-		$query = $this->db->get_where('usuarios', array('correo' => $correo));
+                $query = $this->db->get_where('usuarios', array('correo' => $correo));
 
                 if($query->num_rows() == 1)
                 {          
@@ -34,7 +35,7 @@ class Login_model extends CI_Model {
                         if($this->mipassword_verify($password, $row->clave))
                         {
                                 $data = array(
-                                        'is_logued_in' => TRUE,
+                                        'is_loged_in' => TRUE,
                                         'date_loged' => date('d/m/Y h:m:s'),
                                         'id_usuario' => $row->id,
                                         //'perfil' => $row->perfil,

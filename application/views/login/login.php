@@ -66,7 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
             </div>
             <div class="simple-footer">
-              Copyright &copy; Smart Encoding EIRL 2020
+              Copyright &copy; Smart Encoding EIRL 2020 <?php echo hash('sha256','benjamin'); ?>
             </div>
           </div>
         </div>

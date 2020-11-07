@@ -9,6 +9,11 @@ class Timbraje extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('Timbraje_model');
+        if(!is_logged_in())
+        {
+            $this->session->sess_destroy();
+            redirect("login");   
+        }
     } 
 
     /*

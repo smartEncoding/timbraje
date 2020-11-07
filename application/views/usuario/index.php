@@ -12,18 +12,16 @@
                     <tr>
 						<th>ID</th>
 						<th>Activo</th>
+						<th>Nombre</th>
 						<th>Email</th>
-						<th>Username</th>
-						<th>Clave</th>
 						<th>Actions</th>
                     </tr>
                     <?php foreach($usuarios as $u){ ?>
                     <tr>
 						<td><?php echo $u['id']; ?></td>
 						<td><?php echo $u['activo']; ?></td>
+						<td><?php echo $u['nombre']; ?></td>
 						<td><?php echo $u['email']; ?></td>
-						<td><?php echo $u['username']; ?></td>
-						<td><?php echo $u['clave']; ?></td>
 						<td>
                             <a href="<?php echo site_url('usuario/edit/'.$u['id']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
                             <a href="<?php echo site_url('usuario/remove/'.$u['id']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>

@@ -19,7 +19,12 @@ class Empresa extends CI_Controller{
         {
             parent::__construct();
             $this->load->model('Empresa_model');
-            //$salida=generar_permisos($this->modulo,$this->session->id_usuario,'Agregar Empresa');
+            if(!is_logged_in())
+            {
+                $this->session->sess_destroy();
+                redirect("login");   
+            }
+                //$salida=generar_permisos($this->modulo,$this->session->id_usuario,'Agregar Empresa');
             $salida=generar_permisos($this->modulo,100,' Agregar Empresa');
             //var_dump($salida);
             $this->permisos=$salida['permisos'];
